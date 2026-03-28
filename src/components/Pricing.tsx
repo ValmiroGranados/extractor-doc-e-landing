@@ -3,9 +3,30 @@ import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 
 const plans = [
-  { name: 'Trial', duration: '3 días', desc: 'Prueba gratuita con todas las funciones', price: 'Gratis' },
-  { name: 'Suscripción Anual', duration: '12 Meses', desc: 'Acceso total y soporte continuo', price: 'Contactar', featured: true },
-  { name: 'Licencia Perpetua', duration: 'Lifetime', desc: 'Un solo pago, software para siempre', price: 'Contactar' }
+  { 
+    name: 'Licencia 1 Año', 
+    duration: '12 Meses', 
+    desc: 'Acceso total durante un año calendario.', 
+    price: '$99,900', 
+    url: 'https://checkout.bold.co/payment/LNK_FPA9DBK6EP',
+    featured: false 
+  },
+  { 
+    name: 'Licencia 2 Años', 
+    duration: '24 Meses', 
+    desc: 'La mejor relación costo-beneficio para tu tranquilidad.', 
+    price: '$149,900', 
+    url: 'https://checkout.bold.co/payment/LNK_ESZZG0EY6U',
+    featured: true 
+  },
+  { 
+    name: 'Licencia Vitalicia', 
+    duration: 'Lifetime', 
+    desc: 'Un solo pago, el software es tuyo para siempre.', 
+    price: '$199,900', 
+    url: 'https://checkout.bold.co/payment/LNK_L7OVK48AAC',
+    featured: false 
+  }
 ];
 
 const Pricing: React.FC = () => {
@@ -14,8 +35,8 @@ const Pricing: React.FC = () => {
       <div className="container">
         <div className="text-center" style={{ marginBottom: '4rem' }}>
           <span className="badge">Planes y Licencias</span>
-          <h2 className="title-lg">Adaptabilidad a tu Medida</h2>
-          <p className="subtitle">Usa la aplicación hasta 7 días sin conexión (offline mode) tras activar la licencia en cualquier plan.</p>
+          <h2 className="title-lg">Elige Tu Plan Ideal</h2>
+          <p className="subtitle">Precios en Pesos Colombianos (COP). Pago seguro y activación inmediata.</p>
         </div>
 
         <div className="grid-3">
@@ -54,12 +75,12 @@ const Pricing: React.FC = () => {
                 {plan.price} <span style={{ fontSize: '1rem', color: 'var(--color-bone-muted)', fontWeight: 400 }}>/ {plan.duration}</span>
               </div>
               
-              <button className={plan.featured ? "btn-primary" : "btn-secondary"} style={{ width: '100%', marginBottom: '2rem' }}>
+              <a href={plan.url} className={plan.featured ? "btn-primary" : "btn-secondary"} style={{ width: '100%', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
                 Adquirir Licencia
-              </button>
+              </a>
 
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {['Todas las funciones de extracción', 'Uso offline por 7 días', 'Soporte DIAN: Token y Certificado', 'Exportación .CSV Detallada'].map((feature, i) => (
+                {['Todas las funciones de extracción', 'Uso offline por 7 días', 'Soporte DIAN: Token y Cert.', 'Exportación .CSV Detallada'].map((feature, i) => (
                   <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: 'var(--color-bone)' }}>
                     <CheckCircle2 size={18} color="var(--color-bone-muted)" /> {feature}
                   </li>

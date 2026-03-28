@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { detectOS, getDownloadInfo } from '../utils/os';
+import { detectOS, getDownloadInfo, isMobile } from '../utils/os';
 import { Download, Monitor, Terminal, Apple } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -9,6 +9,13 @@ const Hero: React.FC = () => {
   useEffect(() => {
     setOsData(getDownloadInfo(detectOS()));
   }, []);
+
+  const handleDownloadClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isMobile()) {
+      e.preventDefault();
+      alert('La aplicación sólo está disponible para PC.');
+    }
+  };
 
   const IconComponent = () => {
     if (osData.icon === 'Apple') return <Apple size={20} />;
@@ -36,8 +43,8 @@ const Hero: React.FC = () => {
             Audita a detalle y exporta tu información a compresión fiscal sin demoras.
           </p>
           
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '4rem' }}>
-            <a href={osData.url} className="btn-primary" style={{ padding: '1.25rem 2.5rem', fontSize: '1.1rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', marginBottom: '4rem' }}>
+            <a href={osData.url} onClick={handleDownloadClick} className="btn-primary" style={{ padding: '1.25rem 2.5rem', fontSize: '1.1rem' }}>
               {IconComponent()}
               {osData.label}
             </a>

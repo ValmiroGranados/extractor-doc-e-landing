@@ -1,32 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Monitor, Apple, Terminal } from 'lucide-react';
+import { isMobile, LINKS } from '../utils/os';
 
 const downloads = [
   {
     os: 'Windows',
     icon: <Monitor size={48} color="var(--color-bone)" />,
     desc: 'Windows 10 o superior (x64)',
-    link: '#', 
+    link: LINKS.win, 
     id: 'download-win'
   },
   {
     os: 'macOS',
     icon: <Apple size={48} color="var(--color-bone)" />,
     desc: 'Intel o Apple Silicon M1/M2/M3',
-    link: '#', 
+    link: LINKS.mac, 
     id: 'download-mac'
   },
   {
     os: 'Linux',
     icon: <Terminal size={48} color="var(--color-bone)" />,
     desc: 'Ubuntu, Fedora (.AppImage / .deb)',
-    link: '#', 
+    link: LINKS.linux, 
     id: 'download-linux'
   }
 ];
 
 const Downloads: React.FC = () => {
+  const handleDownloadClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isMobile()) {
+      e.preventDefault();
+      alert('La aplicación sólo está disponible para PC.');
+    }
+  };
+
   return (
     <section id="downloads" className="section-padding" style={{ backgroundColor: 'var(--color-black-light)' }}>
       <div className="container">
@@ -53,7 +61,7 @@ const Downloads: React.FC = () => {
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{d.os}</h3>
               <p style={{ color: 'var(--color-bone-muted)', marginBottom: '2rem' }}>{d.desc}</p>
               
-              <a href={d.link} className="btn-secondary" style={{ display: 'inline-block', width: '100%' }}>
+              <a href={d.link} onClick={handleDownloadClick} className="btn-secondary" style={{ display: 'inline-block', width: '100%' }}>
                 Descargar Instalador
               </a>
             </motion.div>
