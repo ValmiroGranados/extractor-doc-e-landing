@@ -1,0 +1,471 @@
+# Extractor Doc-e - Guia de Usuario
+
+## Tabla de Contenido
+
+1. [Introduccion](#1-introduccion)
+2. [Requisitos del Sistema](#2-requisitos-del-sistema)
+3. [Instalacion](#3-instalacion)
+4. [Activacion de Licencia](#4-activacion-de-licencia)
+5. [Interfaz Principal](#5-interfaz-principal)
+6. [Metodos de Autenticacion con la DIAN](#6-metodos-de-autenticacion-con-la-dian)
+7. [Tipos de Extraccion](#7-tipos-de-extraccion)
+8. [Modos de Ejecucion](#8-modos-de-ejecucion)
+9. [Realizando una Extraccion](#9-realizando-una-extraccion)
+10. [Visualizacion de Resultados](#10-visualizacion-de-resultados)
+11. [Exportacion de Datos](#11-exportacion-de-datos)
+12. [Configuracion y Licencia](#12-configuracion-y-licencia)
+13. [Preguntas Frecuentes](#13-preguntas-frecuentes)
+14. [Solucion de Problemas](#14-solucion-de-problemas)
+
+---
+
+## 1. Introduccion
+
+**Extractor Doc-e** es una aplicacion de escritorio multiplataforma para la extraccion masiva de documentos electronicos desde el portal de la DIAN (Direccion de Impuestos y Aduanas Nacionales de Colombia).
+
+### Que puede hacer con Extractor Doc-e?
+
+- Extraer facturas electronicas emitidas y recibidas por rango de fechas
+- Descargar los archivos PDF y XML originales de cada documento
+- Obtener informacion detallada de terceros (proveedores y clientes)
+- Consultar documentos especificos por su CUFE/CUDE
+- Exportar toda la informacion a CSV para analisis en Excel
+- Obtener el detalle linea por linea de cada factura (items, impuestos, retenciones)
+
+### Tipos de Documentos Soportados
+
+| Codigo | Tipo de Documento |
+|--------|-------------------|
+| 01 | Factura Electronica de Venta |
+| 02 | Nota Credito |
+| 03 | Nota Debito |
+| 91 | Factura en Contingencia |
+
+---
+
+## 2. Requisitos del Sistema
+
+### Windows
+- Windows 10 o superior
+- Procesador x64
+- 256 MB RAM minimo (1 GB recomendado)
+- 500 MB de espacio en disco
+- Conexion a internet
+
+### macOS
+- macOS 10.13 (High Sierra) o superior
+- Intel o Apple Silicon (M1/M2/M3)
+- 256 MB RAM minimo
+- 500 MB de espacio en disco
+- Conexion a internet
+
+### Linux
+- Ubuntu 18.04+, Fedora 30+ o equivalente
+- Procesador x64
+- 256 MB RAM minimo
+- 500 MB de espacio en disco
+- Conexion a internet
+
+---
+
+## 3. Instalacion
+
+### Windows
+1. Descargue el instalador `Extractor Doc-e-X.X.X-x64.exe`
+2. Ejecute el instalador
+3. Seleccione el directorio de instalacion (o deje el predeterminado)
+4. Haga clic en **Instalar**
+5. Al finalizar, abra la aplicacion desde el menu Inicio o el acceso directo del escritorio
+
+### macOS
+1. Descargue el archivo `Extractor Doc-e-X.X.X-arm64.dmg` (Apple Silicon) o `Extractor Doc-e-X.X.X-x64.dmg` (Intel)
+2. Abra el archivo `.dmg`
+3. Arrastre **Extractor Doc-e** a la carpeta **Aplicaciones**
+4. Abra la aplicacion desde Launchpad o Aplicaciones
+
+### Linux
+**AppImage:**
+1. Descargue `Extractor Doc-e-X.X.X-x64.AppImage`
+2. Otorgue permisos de ejecucion: `chmod +x Extractor*.AppImage`
+3. Ejecute el archivo
+
+**Debian/Ubuntu (.deb):**
+1. Descargue `Extractor Doc-e-X.X.X-x64.deb`
+2. Instale: `sudo dpkg -i Extractor*.deb`
+3. Abra desde el menu de aplicaciones
+
+---
+
+## 4. Activacion de Licencia
+
+Al abrir la aplicacion por primera vez, vera la pantalla de activacion de licencia.
+
+### Pasos para activar
+
+1. **Obtenga su clave de licencia** desde el portal de compra
+2. **Ingrese la clave** en el campo correspondiente
+   - Formato: `XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX` (32 caracteres hexadecimales)
+   - Los guiones se agregan automaticamente al escribir
+3. **Verifique su Machine ID** - Se muestra automaticamente. Este identificador vincula la licencia a su equipo
+4. **Acepte los terminos y condiciones** marcando la casilla
+5. Haga clic en **Activar**
+
+### Planes de Licencia
+
+| Plan | Duracion | Descripcion |
+|------|----------|-------------|
+| Trial | 3 dias | Prueba gratuita con todas las funciones |
+| 12 Meses | 1 ano | Suscripcion anual |
+| 24 Meses | 2 anos | Suscripcion bianual |
+| Lifetime | Sin limite | Licencia perpetua |
+
+### Validacion en Linea
+
+- La licencia se valida automaticamente cada 4 horas
+- Puede usar la aplicacion **hasta 7 dias sin conexion** (periodo de gracia)
+- Pasados los 7 dias sin conexion, debera conectarse a internet para revalidar
+
+---
+
+## 5. Interfaz Principal
+
+### Barra de Navegacion (Superior)
+
+La barra de navegacion contiene:
+
+- **Logo y nombre**: "Extractor Doc-e" con el icono ED
+- **Badge de licencia**: Muestra el plan activo (ej: "12 Meses") con indicador verde
+- **Inicio**: Vuelve a la pantalla de extraccion
+- **Configuracion**: Accede a la informacion de licencia y dispositivo
+- **Version**: Muestra la version actual de la aplicacion
+
+### Pestanas Principales
+
+La aplicacion tiene dos pestanas:
+
+1. **Configuracion**: Donde se configuran los parametros de extraccion
+2. **Resultados**: Donde se visualizan los datos extraidos
+
+---
+
+## 6. Metodos de Autenticacion con la DIAN
+
+Para acceder a sus documentos en la DIAN, puede usar uno de dos metodos:
+
+### Token DIAN
+
+1. Ingrese al portal de la DIAN (muisca.dian.gov.co)
+2. Autentiquese con su cuenta
+3. Copie el token de acceso desde la configuracion de su cuenta
+4. Peguelo en el campo **DIAN TOKEN** de la aplicacion
+
+**Ventajas**: Configuracion sencilla, no requiere certificado digital
+**Limitaciones**: El token puede expirar segun la sesion
+
+### Certificado Digital
+
+1. Tenga su archivo de certificado digital (.pfx o .p12) emitido por una entidad certificadora autorizada en Colombia
+2. Haga clic en **Archivo del Certificado** y seleccione su archivo .pfx o .p12
+3. Ingrese la **contrasena** del certificado
+
+**Ventajas**: Conexion mas estable y duradera
+**Limitaciones**: Requiere tener un certificado digital vigente
+
+---
+
+## 7. Tipos de Extraccion
+
+### Facturas
+Extrae facturas electronicas con toda su informacion: emisor, receptor, montos, impuestos, items, estado RADIAN, eventos, etc.
+
+- Puede filtrar por **Emitidas**, **Recibidas** o **Ambos**
+- Requiere seleccionar un rango de fechas
+
+### Datos de Terceros
+Extrae informacion de los terceros (empresas/personas) asociados a sus documentos:
+
+- NIT y razon social
+- Ubicacion (municipio, departamento, pais)
+- Direccion y telefono
+- Email
+- Regimen fiscal y tipo de contribuyente
+
+### Por CUFE/CUDE
+Consulta directa de documentos especificos usando sus identificadores unicos:
+
+- Ingrese uno o varios CUFE/CUDE separados por saltos de linea, comas o punto y coma
+- La aplicacion muestra el conteo de CUFEs detectados
+- No requiere rango de fechas
+
+---
+
+## 8. Modos de Ejecucion
+
+Para cada tipo de extraccion, puede elegir el nivel de detalle:
+
+### Simple (Consulta)
+- Obtiene **solo los metadatos** basicos del catalogo de la DIAN
+- Informacion general: fechas, montos totales, emisor/receptor, estado
+- **Mas rapido** de los tres modos
+- Ideal para: revision rapida, verificacion de estados
+
+### Completa (Ambas)
+- Obtiene metadatos **+ detalle completo del XML** de cada documento
+- Incluye: items linea por linea, desglose de impuestos, informacion completa de terceros
+- **Velocidad media** (requiere procesar cada XML)
+- Ideal para: auditoria detallada, analisis completo, contabilidad
+
+### Anexos (Descarga)
+- Descarga los **archivos PDF y XML** originales de cada documento
+- Los archivos se guardan en una carpeta organizada en su directorio de Descargas:
+  ```
+  Descargas/
+  └── Descargas_DIAN_2024-01-01_al_2024-01-31_900123456/
+      ├── PDF/
+      │   ├── documento_trackId1.pdf
+      │   └── documento_trackId2.pdf
+      └── XML/
+          ├── documento_trackId1.xml
+          └── documento_trackId2.xml
+  ```
+- **Mas lento** (descarga individual de archivos)
+- Ideal para: archivado local, respaldo, acceso offline a documentos
+
+---
+
+## 9. Realizando una Extraccion
+
+### Paso a paso
+
+1. **Seleccione el metodo de autenticacion** (Token o Certificado) e ingrese las credenciales
+2. **Elija el tipo de extraccion**: Facturas, Datos Terceros o Por CUFE/CUDE
+3. **Seleccione el tipo de documento** (solo para Facturas): Emitidas, Recibidas o Ambos
+4. **Elija el modo de ejecucion**: Simple, Completa o Anexos
+5. **Defina el rango de fechas** en el calendario (excepto modo CUFE/CUDE)
+6. Haga clic en **SINCRONIZAR** (o **EXTRAER X DOCUMENTO(S)** en modo CUFE)
+
+### Barra de Progreso
+
+Durante la extraccion vera:
+- **Mensaje de fase**: "Buscando documentos en la DIAN...", "Procesando documentos...", etc.
+- **Contador**: "45/1200" mostrando documentos procesados vs total
+- **Barra visual**: Porcentaje de avance
+
+### Busqueda Interrumpida
+
+Si la extraccion se interrumpe (cierre de app, perdida de conexion):
+- Al volver a abrir, la aplicacion detecta la busqueda pendiente
+- Muestra un aviso con los registros encontrados hasta el momento
+- Puede elegir:
+  - **Continuar busqueda**: Retoma desde donde quedo
+  - **Descartar**: Elimina los datos parciales y comienza de nuevo
+
+---
+
+## 10. Visualizacion de Resultados
+
+Despues de una extraccion exitosa, la pestana **Resultados** se habilita automaticamente.
+
+### Tarjetas de Resumen (KPIs)
+
+En la parte superior se muestran 4 tarjetas:
+
+| Tarjeta | Descripcion |
+|---------|-------------|
+| TOTAL FACTURAS | Cantidad de documentos extraidos |
+| VALOR TOTAL | Suma de todos los montos en COP |
+| SIN EVENTOS | Documentos sin eventos asociados |
+| ERRORES DIAN | Indicador de errores durante la sincronizacion |
+
+### Tabla de Facturas
+
+La tabla de resultados incluye 27 columnas:
+
+- **Expandir (+/-)**: Ver el detalle de items de la factura
+- **Tipo**: Emitida o Recibida (badge de color)
+- **Serie y Numero**: Identificacion del documento
+- **Tipo Documento**: Factura, Nota Credito, Nota Debito, etc.
+- **Fechas**: Emision, Recepcion, Vencimiento
+- **Emisor**: NIT y razon social
+- **Receptor**: NIT y razon social
+- **Moneda**: Codigo de moneda (COP, USD, etc.)
+- **Montos**: Subtotal, IVA, ICA, IPC, Total
+- **Resolucion**: Numero de resolucion DIAN
+- **Estado RADIAN**: Estado del documento en el sistema RADIAN
+- **Forma y Medio de Pago**: Codigos con descripcion
+- **Notas**: Observaciones del documento
+- **Eventos**: Indicador SI/NO y boton para ver detalle
+- **CUFE/CUDE**: Identificador unico (clic para ver en DIAN)
+- **Enlace DIAN**: Link directo al portal
+
+### Detalle de Items (Fila Expandida)
+
+Al hacer clic en el boton **+** de una factura:
+- Se despliega el detalle **Composicion de la Factura**
+- Muestra cada item con:
+  - Numero de linea y descripcion
+  - Codigo del producto
+  - Cantidad y precio unitario
+  - Subtotal y descuento
+  - Impuestos aplicados (nombre, porcentaje, valor)
+
+### Tabla de Terceros
+
+Cuando extrae **Datos de Terceros**, la tabla muestra:
+- NIT
+- Razon Social
+- Ubicacion (municipio, departamento, pais)
+- Direccion
+- Telefono
+- Email
+- Regimen Fiscal
+
+La tabla de terceros esta paginada con 10 registros por pagina.
+
+### Modal de Eventos
+
+Para facturas con eventos, al hacer clic en el boton de eventos:
+- Se abre una ventana emergente con el historial de eventos del documento
+- Muestra cada evento con su fecha, codigo y descripcion
+
+---
+
+## 11. Exportacion de Datos
+
+### Formatos de Exportacion
+
+#### Descarga Total (CSV Resumen)
+- Un registro por factura
+- Columnas: CUFE, tipo operacion, NITs, razones sociales, fechas, montos (subtotal, IVA, ICA, IPC, retenciones, total), moneda, estado RADIAN, forma/medio de pago, notas
+
+#### Descarga Detallado (CSV con Items)
+- Multiples registros por factura (uno por cada item/linea)
+- Incluye todas las columnas del resumen **mas**: numero de linea, codigo producto, descripcion, cantidad, precio unitario, subtotal item, descuento, nombre/porcentaje/valor de impuesto
+
+#### Terceros (CSV)
+- Un registro por tercero unico
+- Columnas: NIT, razon social, ubicacion, direccion, telefono, email, regimen fiscal, tipo contribuyente, responsabilidad tributaria
+
+### Como Exportar
+
+1. Vaya a la pestana **Resultados**
+2. Haga clic en el boton correspondiente:
+   - **Descarga Total**: Para el resumen general
+   - **Descarga Detallado**: Para el detalle con items
+   - **Descargar Excel (Terceros)**: Para la base de datos de terceros
+3. Se abrira un dialogo para seleccionar la ubicacion del archivo
+4. El archivo se guarda en formato CSV con codificacion UTF-8 compatible con Excel
+
+### Nombre del Archivo
+
+El archivo exportado tiene el formato:
+```
+extractor_dian_[formato]_[timestamp].csv
+```
+
+---
+
+## 12. Configuracion y Licencia
+
+Acceda a la pagina de **Configuracion** haciendo clic en el icono de engranaje en la barra de navegacion.
+
+### Informacion de Licencia
+
+| Campo | Descripcion |
+|-------|-------------|
+| Estado | "Activa" (verde) o "Inactiva" (rojo) |
+| Plan | Trial, 12 Meses, 24 Meses o Lifetime |
+| Clave de licencia | Su clave completa |
+| Expiracion | Fecha de vencimiento o "Sin limite" (Lifetime) |
+| Ultima validacion | Fecha y hora de la ultima verificacion exitosa |
+
+### Informacion del Dispositivo
+
+| Campo | Descripcion |
+|-------|-------------|
+| Machine ID | Identificador unico de su equipo |
+
+### Desactivar Licencia
+
+Si necesita transferir su licencia a otro equipo:
+
+1. Vaya a **Configuracion**
+2. En la zona inferior, haga clic en **Desactivar licencia**
+3. Confirme haciendo clic en **Confirmar desactivacion**
+4. La licencia se eliminara de este equipo
+5. Contacte al administrador para que desvinculen (unbind) la licencia en el panel de administracion
+6. Puede reactivar la licencia en el nuevo equipo
+
+---
+
+## 13. Preguntas Frecuentes
+
+### Puedo usar la misma licencia en dos equipos?
+No. Cada licencia esta vinculada a un unico equipo (Machine ID). Para cambiar de equipo, debe desactivar la licencia y solicitar al administrador que la desvincule.
+
+### Que pasa si no tengo internet?
+La aplicacion funciona hasta 7 dias sin conexion usando la ultima validacion exitosa. Despues de 7 dias, debera conectarse para revalidar.
+
+### Como obtengo mi token de la DIAN?
+Ingrese al portal de la DIAN con su cuenta, navegue a la seccion de facturacion electronica y copie el token de acceso disponible en su perfil o configuracion.
+
+### Cuantos documentos puedo extraer a la vez?
+No hay limite tecnico. La aplicacion extrae todos los documentos disponibles en el rango de fechas seleccionado. Para grandes volumenes, se recomienda extraer por periodos mensuales.
+
+### En que formato se exportan los datos?
+Los datos se exportan en CSV (valores separados por comas), compatible con Microsoft Excel, Google Sheets y cualquier software de hojas de calculo.
+
+### Puedo retomar una extraccion que se interrumpio?
+Si. La aplicacion guarda el estado de la ultima extraccion. Al volver a abrir, le ofrecera la opcion de continuar desde donde se detuvo.
+
+### La aplicacion guarda mis credenciales de la DIAN?
+No. El token y las credenciales del certificado solo se usan durante la sesion activa y no se almacenan en disco.
+
+---
+
+## 14. Solucion de Problemas
+
+### La clave de licencia no es aceptada
+
+| Posible Causa | Solucion |
+|---------------|----------|
+| Formato incorrecto | Verifique que la clave tenga 32 caracteres hexadecimales |
+| Licencia ya usada en otro equipo | Solicite al administrador que desvincule (unbind) la licencia |
+| Licencia expirada | Adquiera una nueva licencia |
+| Sin conexion a internet | Verifique su conexion; la activacion requiere internet |
+
+### Error de conexion con la DIAN
+
+| Posible Causa | Solucion |
+|---------------|----------|
+| Problemas de red | Verifique su conexion a internet |
+| DIAN fuera de servicio | Consulte el estado del portal en https://catalogo-vpfe.dian.gov.co |
+| Firewall corporativo | Solicite al area de TI que permita acceso a los dominios de la DIAN |
+| Token expirado | Renueve su token en el portal de la DIAN |
+
+### No se encuentran documentos
+
+| Posible Causa | Solucion |
+|---------------|----------|
+| Rango de fechas incorrecto | Amplie el rango de fechas o verifique las fechas |
+| Tipo de documento incorrecto | Cambie a "Ambos" para buscar emitidos y recibidos |
+| Token sin permisos | Verifique que su cuenta DIAN tenga acceso a facturacion electronica |
+| Empresa nueva | Si la empresa fue registrada recientemente, puede no tener documentos historicos |
+
+### La exportacion CSV no abre correctamente en Excel
+
+| Posible Causa | Solucion |
+|---------------|----------|
+| Codificacion | El archivo usa UTF-8; en Excel use "Datos > Obtener datos > Desde texto/CSV" |
+| Separador | Asegurese de que Excel reconozca la coma como separador |
+
+### La aplicacion se cierra inesperadamente
+
+1. Reinicie la aplicacion
+2. Si persiste, elimine la cache: cierre la app y vuelva a abrirla
+3. Si continua, reinstale la aplicacion
+4. Contacte soporte tecnico con los detalles del error
+
+---
+
+*Extractor Doc-e v1.0.0 - Documentacion de Usuario*
