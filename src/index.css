@@ -163,6 +163,13 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
 }
 
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+}
+
 /* Responsive Mobile Fixes */
 @media (max-width: 768px) {
   .nav-links-text {
@@ -191,5 +198,10 @@ h1, h2, h3, h4, h5, h6 {
   .container {
     padding: 0 1.5rem;
     overflow-x: hidden;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }

@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
   return (
     <footer style={{ borderTop: '1px solid var(--color-border)', padding: '4rem 0 2rem 0', marginTop: '4rem' }}>
       <div className="container">
-        <div className="grid-2" style={{ marginBottom: '4rem', gridTemplateColumns: '1.5fr 1fr 1.5fr', alignItems: 'start' }}>
+        <div className="footer-grid" style={{ marginBottom: '4rem' }}>
           
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
