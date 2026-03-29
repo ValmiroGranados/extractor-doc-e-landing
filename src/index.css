@@ -162,3 +162,34 @@ h1, h2, h3, h4, h5, h6 {
   z-index: -1;
   pointer-events: none;
 }
+
+/* Responsive Mobile Fixes */
+@media (max-width: 768px) {
+  .nav-links-text {
+    display: none !important;
+  }
+  
+  .title-xl {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .title-lg {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .section-padding {
+    padding: 4rem 0;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Prevent horizontal scroll from OS block scaling */
+  .container {
+    padding: 0 1.5rem;
+    overflow-x: hidden;
+  }
+}

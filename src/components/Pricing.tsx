@@ -7,6 +7,7 @@ const plans = [
     name: 'Licencia 1 Año', 
     duration: '12 Meses', 
     desc: 'Acceso total durante un año calendario.', 
+    originalPrice: '$199,900',
     price: '$99,900', 
     url: 'https://checkout.bold.co/payment/LNK_FPA9DBK6EP',
     featured: false 
@@ -15,6 +16,7 @@ const plans = [
     name: 'Licencia 2 Años', 
     duration: '24 Meses', 
     desc: 'La mejor relación costo-beneficio para tu tranquilidad.', 
+    originalPrice: '$299,900',
     price: '$149,900', 
     url: 'https://checkout.bold.co/payment/LNK_ESZZG0EY6U',
     featured: true 
@@ -23,6 +25,7 @@ const plans = [
     name: 'Licencia Vitalicia', 
     duration: 'Lifetime', 
     desc: 'Un solo pago, el software es tuyo para siempre.', 
+    originalPrice: '$399,900',
     price: '$199,900', 
     url: 'https://checkout.bold.co/payment/LNK_L7OVK48AAC',
     featured: false 
@@ -71,8 +74,13 @@ const Pricing: React.FC = () => {
                 {plan.desc}
               </p>
               
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '2rem' }}>
-                {plan.price} <span style={{ fontSize: '1rem', color: 'var(--color-bone-muted)', fontWeight: 400 }}>/ {plan.duration}</span>
+              <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '2rem' }}>
+                <span style={{ fontSize: '1.1rem', color: 'var(--color-border)', textDecoration: 'line-through', fontWeight: 500, marginBottom: '-0.25rem' }}>
+                  {plan.originalPrice}
+                </span>
+                <div style={{ fontSize: '2.5rem', fontWeight: 700 }}>
+                  {plan.price} <span style={{ fontSize: '1rem', color: 'var(--color-bone-muted)', fontWeight: 400 }}>/ {plan.duration}</span>
+                </div>
               </div>
               
               <a href={plan.url} className={plan.featured ? "btn-primary" : "btn-secondary"} style={{ width: '100%', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>

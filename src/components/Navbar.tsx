@@ -39,9 +39,11 @@ const Navbar: React.FC = () => {
       </div>
 
       <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-        <a href="#features" style={{ fontSize: '0.95rem', fontWeight: 500, color: 'var(--color-bone-muted)' }}>Módulos</a>
-        <a href="#downloads" style={{ fontSize: '0.95rem', fontWeight: 500, color: 'var(--color-bone-muted)' }}>Descargas</a>
-        <a href="#pricing" style={{ fontSize: '0.95rem', fontWeight: 500, color: 'var(--color-bone-muted)' }}>Precios</a>
+        <div className="nav-links-text" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          <a href="#features" style={{ fontSize: '0.95rem', fontWeight: 500, color: 'var(--color-bone-muted)' }}>Módulos</a>
+          <a href="#downloads" style={{ fontSize: '0.95rem', fontWeight: 500, color: 'var(--color-bone-muted)' }}>Descargas</a>
+          <a href="#pricing" style={{ fontSize: '0.95rem', fontWeight: 500, color: 'var(--color-bone-muted)' }}>Precios</a>
+        </div>
         <a href="#downloads" className="btn-primary" style={{ padding: '0.6rem 1.25rem', fontSize: '0.9rem' }}>
           Obtener Trial
         </a>

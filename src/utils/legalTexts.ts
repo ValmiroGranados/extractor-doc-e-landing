@@ -13,7 +13,7 @@ Mis Impuestos co no se hace responsable por el mal uso de la información extra�
 Esta aplicación ha sido diseñada y tiene cobertura técnica, funcional y legal exclusivamente dentro del territorio de la República de Colombia.
 
 4. Licencias y Propiedad Intelectual:
-La adquisición de una licencia (anual, bianual o vitalicia) otorga un derecho de uso no exclusivo e intransferible. La licencia está estrictamente vinculada a un único equipo (Machine ID). La ingeniería inversa, distribución no autorizada o copia del código fuente está penada por las leyes de derechos de autor de Colombia.`
+La adquisición de una licencia (anual, bianual o vitalicia) otorga un derecho de uso no exclusivo e intransferible. La licencia está estrictamente vinculada a un único equipo (Machine ID). La ingeniería inversa, distribución no autorizada o copia del código fuente está penada por las leyes de derechos de autor de Colombia. Nota importante: La "Licencia Vitalicia" asegura que el usuario obtendrá actualizaciones gratuitas del software por el tiempo de vida del producto.`
   },
   privacy: {
     title: "Política de Privacidad y Tratamiento de Datos",
@@ -26,7 +26,7 @@ La aplicación Extractor Doc-e es una herramienta de escritorio (local). Procesa
 Al comprar o activar una licencia, recopilamos únicamente los datos necesarios para facturación y validación del estado del software (Nombre, Correo y Machine ID del equipo). 
 
 3. Uso de la Información:
-La información recopilada se utiliza exclusivamente para validar que su licencia se encuentre activa, enviarle notificaciones de actualizaciones críticas y dar soporte técnico.
+La información recopilada se utiliza exclusivamente para validar que su licencia se encuentre activa, enviarle notificaciones de actualizaciones críticas y dar soporte técnico. Para el caso de planes como la "Licencia Vitalicia", estos datos son esenciales para garantizar la entrega perpetua de actualizaciones gratuitas por el tiempo de vida del producto.
 
 4. Responsable del Tratamiento:
 El responsable legal de los datos de licenciamiento es Mis Impuestos co (soporte@misimpuestosco.com), Medellín, Antioquia.
