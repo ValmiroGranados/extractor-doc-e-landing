@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
         
         <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '2rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', color: 'var(--color-bone-muted)', fontSize: '0.9rem' }}>
           <div>
-            &copy; {new Date().getFullYear()} Extractor Doc-e por Mis Impuestos SAS. Las marcas mencionadas pertenecen a sus respectivos dueños.
+            &copy; {new Date().getFullYear()} Extractor Doc-e por Mis Impuestos CO. Las marcas mencionadas pertenecen a sus respectivos dueños.
           </div>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             <a href="#" onClick={(e) => openLegal(e, 'terms')} style={{ color: 'var(--color-bone-muted)' }}>Términos y Condiciones</a>

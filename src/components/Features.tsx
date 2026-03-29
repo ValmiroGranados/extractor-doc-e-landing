@@ -11,7 +11,7 @@ const coreFeatures = [
   {
     icon: <TableProperties size={32} color="var(--color-bone)" />,
     title: 'Extracción Completa Detallada',
-    desc: 'Baja elXML e integra el detalle línea por línea, desglosando impuestos, terceros y retenciones. Excelente para contabilidad.',
+    desc: 'Baja el XML e integra el detalle línea por línea, desglosando impuestos, terceros y retenciones. Excelente para contabilidad.',
   },
   {
     icon: <DownloadCloud size={32} color="var(--color-bone)" />,
