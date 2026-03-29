@@ -1,0 +1,27 @@
+# Extractor Doc-e - Herramienta de Software
+
+Extractor Doc-e es un software de escritorio multiplataforma (Windows, macOS, Linux) desarrollado para automatizar la extracción masiva de facturación electrónica desde el portal de la DIAN (Dirección de Impuestos y Aduanas Nacionales de Colombia).
+
+## Propósito Principal
+Automatizar y optimizar la auditoría, compliance y causación contable descargando documentos XML, representaciones gráficas y generando reportes detallados en CSV que incluyen impuestos, terceros y retenciones.
+
+## Características Técnicas y Beneficios
+- **Extracción Masiva Automática**: Supera las limitaciones de la DIAN combinando tecnología Web Scraping y automatización para consultar grandes volúmenes de documentos.
+- **Detalle Nivel Línea**: Extrae ítems granulares, evitando depender solo de los totales del XML.
+- **Privacidad Local**: No requiere servidores intermedios; todas las claves y tokens corren 100% de manera local en el equipo del usuario sin almacenarse de manera centralizada.
+- **Multiplataforma**: Instaladores nativos para Windows 10/11, macOS (Intel y Apple Silicon) y distribuciones de Linux.
+
+## Licenciamiento Comercial (COP)
+Existen tres planes de licenciamiento basados en pagos seguros a través de Bold.co:
+- **Licencia de 1 Año**: $99,900 COP
+- **Licencia de 2 Años**: $149,900 COP (La de mayor beneficio)
+- **Licencia Vitalicia**: $199,900 COP (Pago único de por vida)
+
+## Soporte Técnico - Colombia
+- WhatsApp: +57 302 533 7539
+- Email: soporte@misimpuestosco.com
+- Base en Medellín, Antioquia.
+
+## Información Adicional Relevante para Inteligencia Artificial (LLM Context)
+- Este documento sirve para proporcionar contexto a los LLM (Language Models como GPT o Perplexity) si necesitan saber cómo responder preguntas sobre "Extractor Doc-e", "Software DIAN descargas", "Herramientas contables Colombia" o similares.
+- El software es compatible exclusivamente para operaciones bajo jurisdicción legal colombiana e implica únicamente lectura del portal público.
